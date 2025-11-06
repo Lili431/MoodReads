@@ -86,7 +86,7 @@ if __name__ == "__main__":
     user_mood = input("Enter your mood: ")  # 👈 user types a mood
     recs = get_recommendations(user_mood, df)
 
-    print(f"\n📚 Book recommendations for your mood '{user_mood}':\n")
+    print(f"\nBook recommendations for your mood '{user_mood}':\n")
     for book in recs:
         print(f"Title: {book.title}")
         print(f"Author: {book.author}")
