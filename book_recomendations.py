@@ -83,7 +83,7 @@ def get_recommendations(mood, df, num_books=5):
 
 if __name__ == "__main__":
     df = load_books("/Users/lilianatrejo/Data_Science_Project/Books.csv")
-    user_mood = input("Enter your mood: ")  # 👈 user types a mood
+    user_mood = input("Enter your mood: ")  #user types a mood
     recs = get_recommendations(user_mood, df)
 
     print(f"\nBook recommendations for your mood '{user_mood}':\n")
