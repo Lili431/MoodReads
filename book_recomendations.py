@@ -1,7 +1,7 @@
 import random
 import pandas as pd
 
-# --- Book class ---
+# my Book class
 class Book:
     def __init__(self, title, author, genre, rating, pages, description, image=None):
         self.title = title
@@ -24,7 +24,7 @@ class Book:
             "image": self.image,
         }
 
-# --- Load the CSV dataset ---
+#load csv dataset
 def load_books(csv_path):
     """Loads books from a CSV into a cleaned DataFrame."""
     df = pd.read_csv(csv_path)
@@ -43,7 +43,7 @@ def load_books(csv_path):
 
     return df
 
-# --- Mood to genre mapping ---
+#Mood to genre mapping
 MOOD_GENRE_MAP = {
     "happy": ["romance", "comedy", "feel-good"],
     "sad": ["inspirational", "self-help"],
@@ -53,7 +53,7 @@ MOOD_GENRE_MAP = {
     "thoughtful": ["non-fiction", "philosophy", "literary criticism"],
 }
 
-# --- Get recommendations based on mood ---
+#Get recommendations based on mood
 def get_recommendations(mood, df, num_books=5):
     mood = mood.lower()
     genres = MOOD_GENRE_MAP.get(mood, [mood])
@@ -81,7 +81,6 @@ def get_recommendations(mood, df, num_books=5):
     random.shuffle(books)
     return books
 
-# --- Main test block ---
 if __name__ == "__main__":
     df = load_books("/Users/lilianatrejo/Data_Science_Project/Books.csv")
     user_mood = input("Enter your mood: ")  # 👈 user types a mood
